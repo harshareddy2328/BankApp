@@ -1,0 +1,39 @@
+
+
+<div data-ng-include="'views/admin/common-css.html'"></div>
+
+<div class="page-wrapper">
+    <div class="page-wrapper-row">
+        <div class="page-wrapper-top">
+            <!-- BEGIN HEADER -->
+            <div data-ng-include="'views/layouts/tpl/header.html'"  data-ng-controller="menuCtrl as mnc"
+                class="page-header"></div>
+            <!-- END HEADER -->
+        </div>
+    </div>
+    <div class="page-wrapper-row full-height">
+        <div class="page-wrapper-middle">
+            <div class="page-container">
+                <div class="page-content">
+                    <div class="container">
+
+                     <div class="text-center" style="margin-top: 15%;">
+                        <p style="font-size: 25px;font-weight: 100; color: blueviolet;">{{hmc.name}}</p>
+                    </div>
+                     </div>
+                </div>
+            <a href="javascript:;" class="page-quick-sidebar-toggler">
+                <i class="icon-login"></i>
+            </a>
+            </div>
+        <!-- END CONTAINER -->
+        </div>
+     </div>
+<div class="page-wrapper-row">
+<div class="page-wrapper-bottom">
+<!-- BEGIN FOOTER -->
+<div data-ng-include="'views/layouts/tpl/footer.html'"> </div>
+<!-- END FOOTER -->
+</div>
+</div>
+</div>

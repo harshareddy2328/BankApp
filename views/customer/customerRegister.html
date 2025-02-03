@@ -1,0 +1,240 @@
+
+
+
+<style>
+  .select2-container--bootstrap {
+      width: 100% !important;
+  }
+  
+  .intl-tel-input {
+      width: 100%;
+  }
+  
+  .help-block {
+      color: #e73d4a;
+  }
+  
+  .error {
+      color: #e73d4a;
+  }
+  
+  .select2-container .select2-choice .select2-arrow {
+      background-image: none;
+      background: none;
+      border-left: none;
+  }
+  
+  .select2-container .select2-choice>.select2-chosen {
+      color: #555;
+  }
+  
+  
+  @media (max-width: 991px) {
+      .top-menu {
+          display: none !important;
+      }
+  }
+  </style>
+  <link href="/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+
+<div data-ng-include="'views/customer/headerCommon.html'"
+                   ></div>
+
+    <main>
+        <div class="container">
+    
+          <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-2">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+    
+                  <div class="d-flex justify-content-center">
+                      <a><img src="https://thebanks.eu/img/logos/Easybank_NO.png" alt="logo" height="70" class="logo-default"> </a>
+                  </div><!-- End Logo -->
+    
+                  <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Multi Columns Form</h5>
+    
+                  <!-- Multi Columns Form -->
+                  <form class="row g-3" id="RegisterForm">
+                    <div class="col-md-4">
+                      <label for="inputName5" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="inputName5" name="firstName" ng-model="firstName" >
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" id="inputName5" name="middleName" ng-model="middleName" >
+                      </div>
+                      <div class="col-md-4">
+                        <label for="inputName5" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="inputName5" name="lastName" ng-model="lastName" >
+                      </div>
+                    <div class="col-md-4">
+                      <label for="inputEmail5" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmail5"  name="email" ng-model="email" >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputEmail5" class="form-label">Mobile</label>
+                      <input type="number" class="form-control" id="mpbile"  name="mobile" ng-model="mobile" >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputPassword5" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPassword5"  name="password"  ng-model="password" >
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress5" class="form-label">Address</label>
+                      <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St"  name="address"  ng-model="address">
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress2" class="form-label">Address 2</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"  name="addressOne"   ng-model="addressOne">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputCity" class="form-label">City</label>
+                      <input type="text" class="form-control" id="inputCity"  name="city"  ng-model="city">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputState" class="form-label">State</label>
+                      <input type="text" class="form-control" id="state"  name="state"  ng-model="state">
+                     
+                    </div>
+                    <div class="col-md-2">
+                      <label for="inputZip" class="form-label">Zip</label>
+                      <input type="text" class="form-control" id="inputZip" ng-model="zip"  name="zip" >
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputZip" class="form-label">Account Type</label>
+                    
+                      <select class="form-control" name="accountType" id="accountType" ng-model="accountType">
+                        <option value="">Please Select</option>
+                        <option value="{{accountType.id}}" ng-repeat="accountType in accountTypeList">{{accountType.name}}</option>
+                    </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputZip" class="form-label">User Type</label>
+                  
+                    <select class="form-control" name="userType" id="userType" ng-model="userType">
+                      <option value="">Please Select</option>
+                      <option value="{{userType.id}}" ng-repeat="userType in userTypeList">{{userType.name}}</option>
+                  </select>
+                  </div>
+                    <div class="col-md-4">
+                        <label for="inputZip" class="form-label">Address Type</label>
+                      <select name="adressType" id="" ng-model="adressType"  class="form-control">
+                        <option value="">Please Select</option>
+                        <option value="present">Present address</option>
+                        <option value="permanent">Permanent address</option>
+                      </select>
+                    </div>
+                    <div class="text-center mt-5">
+                      <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                    </div>
+                  </form><!-- End Multi Columns Form -->
+    
+                </div>
+              </div>
+    
+             
+    
+                </div>
+              </div>
+            </div>
+    
+          </section>
+    
+        </div>
+      </main>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script>
+    (function () {
+        $('#RegisterForm').validate({
+            errorElement: 'span', //default input error message container
+            errorClass: 'help-block help-block-error', // default input error message class
+            focusInvalid: false, // do not focus the last invalid input
+            ignore: "", // validate all fields including form hidden input
+            rules: {
+
+
+
+                firstName: {
+                    required: true,
+
+                },
+                email: {
+                    required: true,
+
+                },
+                password:{
+                  required:true
+                }
+
+            },
+            messages: {
+                service: "Please select the service.",
+                city: "Please select the city.",
+                date: "date is required",
+                tdate: "date is required",
+
+
+                prospect: "Please select the speciality"
+
+
+            },
+            highlight: function (element) { // hightlight error inputs
+                $(element)
+                    .closest('.form-group').addClass(
+                        'has-error'); // set error class to the control group
+            },
+            unhighlight: function (element) { // revert the change done by hightlight
+                $(element)
+                    .closest('.form-group').removeClass(
+                        'has-error'); // set error class to the control group
+            },
+            success: function (label) {
+                label
+                    .closest('.form-group').removeClass(
+                        'has-error'); // set success class to the control group
+            },
+
+        });
+
+
+
+
+
+        setTimeout(function () {
+
+            $('#date,#tdate,#reminderDate2').datepicker({
+                format: "yyyy-mm-dd",
+                autoclose: true,
+
+            });
+
+            $('#date').on("changeDate", function () {
+                $('#tdate').val($(this).val());
+                var selected = $(this).val();
+
+                var dt2 = $('#tdate');
+
+
+                $('#tdate').datepicker('setStartDate', selected);
+
+
+            });
+
+
+        }, 100);
+
+
+
+
+    })();
+</script>
+
+  <div data-ng-include="'views/customer/footer.html'"
+  ></div>
+
+

@@ -1,0 +1,128 @@
+<!-- BEGIN HEADER TOP -->
+<div class="page-header-top">
+    <div class="container">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a ui-sref="dashboard" href="/">
+                <img src="plugins/assets/img/logo1.png" alt="logo" height="70" class="logo-default"> </a>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:void(0)" class="menu-toggler"></a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <li class="dropdown dropdown-user dropdown-dark">
+                    <a href="javascript:;" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfbLI8NjDiH6r4frZIDZnPDGZsegXns_88J-Hqyrnk3w&s">
+                        <span class="username username-hide-mobile" ng-bind="mnc.getName()"></span>
+                    </a>
+                    <!-- <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="/account/change-password">
+                                <i class="icon-user"></i> Change Password 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="return false;" class="{{mnc.isOnline}}" ng-click="mnc.toggleStatus()">                               
+                                <i class="fa fa-circle" ></i> {{mnc.isOnline}} 
+                            </a>
+                        </li>
+
+                    </ul> -->
+
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                    <span class="sr-only">Toggle Quick Sidebar</span>
+                    <i class="icon-logout" ng-click="mnc.logOut()"></i>
+
+
+                </li>
+                <!-- END QUICK SIDEBAR TOGGLER -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+</div>
+<!-- END HEADER TOP -->
+<!-- BEGIN HEADER MENU -->
+<div class="page-header-menu">
+    <div class="container">
+        <!-- BEGIN HEADER SEARCH BOX -->
+
+        <!-- END HEADER SEARCH BOX -->
+        <!-- BEGIN MEGA MENU -->
+        <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+        <!-- DOC: Remove dropdown-menu-hover and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+        <div class="hor-menu">
+
+            <!--{{mnc.menus}}-->
+            <ul class="nav navbar-nav" id="">
+				<li aria-haspopup="true" class="menu-dropdown">
+
+                    <a href="" target="_blank" aria-expanded="true" ng-show="userPermissions.includes('menu.urm')"> URM
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left">                        
+                        <li aria-haspopup="true" >                
+                                <a href="/user-list" class="nav-link" > User List</a>
+                        </li>
+                        <li aria-haspopup="true">                                                      
+                            <a href="/customer-list" class="nav-link" ng-show="userPermissions.includes('menu.customer.list')">Customer List</a>
+                        </li>
+                        <!-- <li aria-haspopup="true">                                                      
+                                <a href="" class="nav-link">Test</a>
+                        </li>                         -->
+
+                    </ul>
+                </li> 
+                <li aria-haspopup="true" class="menu-dropdown">
+
+                    <a href="" target="_blank" aria-expanded="true"> Transaction
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left">                        
+                        <li aria-haspopup="true">                
+                                <a href="/transaction-details" class="nav-link" ng-show="userPermissions.includes('menu.transaction.details')">Transaction Details</a>
+                        </li>
+
+						 <li aria-haspopup="true">                
+                                <a href="/task-details" class="nav-link" ng-show="userPermissions.includes('menu.task.history')">Task History</a>
+                        </li>
+						
+						 <li aria-haspopup="true">                
+                                <a href="/logs" class="nav-link" ng-show="userPermissions.includes('menu.logs')">Logs</a>
+                        </li>
+                                      
+
+                    </ul>
+                </li>                
+            </ul>
+
+
+        </div>
+        <!-- END MEGA MENU -->
+    </div>
+</div>
+
+<!-- END HEADER MENU -->
+
+<script>
+
+    (function () {
+        setTimeout(function () {
+            $("#metismenu").metisMenu();
+        }, 200)
+        $(".menu-toggler").click(function (e) {
+            e.preventDefault();
+
+            $(".page-mobile-menu").toggle();
+        })
+    })();
+
+</script>
